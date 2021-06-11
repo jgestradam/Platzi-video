@@ -9,7 +9,9 @@ import plusIcon from '../assets/static/plus-icon.png';
 const CarouselItem = (props) => {
   const { cover, title, year, contentRating, duration } = props;
   const handleSetFavorite = () => {
-    props.setFavorite({ cover, title, year, contentRating, duration });
+    props.setFavorite({ 
+      cover, title, year, contentRating, duration,
+    });
   };
   return (
     <div className='carousel-item'>

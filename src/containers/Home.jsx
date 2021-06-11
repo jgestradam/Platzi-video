@@ -13,15 +13,18 @@ const Home = ({ myList, trends, originals }) => {
   return (
     <>
       <Search />
-      {
-        myList.lenght > 0 && (
-          <Categories title='Mi lista'>
-            <Carousel>
-              {myList.map((item) => <CarouselItem key={item.id} {...item} />)}  
-            </Carousel>
-          </Categories>
-        )
-      }
+      
+      {myList.length > 0 && (
+        <Categories title='Mi lista'> 
+          {' '}
+          <Carousel> 
+            {' '}
+            {myList.map((item) => <CarouselItem key={item.id} {...item} />)}
+            {' '}
+          </Carousel>
+          {' '}
+        </Categories>
+      )}
 
       <Categories title='Tendencias'>
         <Carousel>
