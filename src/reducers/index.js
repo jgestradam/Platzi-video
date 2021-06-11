@@ -6,6 +6,11 @@ const reducer = (state, action) => {
         ...state, // Desestructuramos la variable state
         myList: [...state.myList, action.payload], // Asignamos nuevos valores a mylist que fueron los que se trajeron del action. Si no desestructuramos la myList se sobrescribiran y no se añadiran nuevos favoritos
       };
+    case 'DELETE_FAVORITE':
+      return {
+        ...state,
+        myList: state.myList.filter((items) => items.id !== action.payload),
+      };
     default: // Caso por defecto si no cumple el action con ninguno
       return state;
   }
