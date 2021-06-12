@@ -12,41 +12,34 @@ import { logoutRequest } from '../actions';
 
 const Header = (props) => {
   const { user } = props;
-  const hasUser = Object.keys(user).lenght > 0;
+  const hasUser = Object.keys(user).length > 0;
   const handleLogout = () => {
     props.logoutRequest({});
   };
   return (
     <header className='header'>
       <Link to='/'>
-        <img className='header__img' src={logo} alt='Platzi Video' />      
+        <img className='header__img' src={logo} alt='Platzi Video' />
       </Link>
       <div className='header__menu'>
         <div className='header__menu--profile'>
-          {hasUser ? (
-            <img src={gravatar(user.email)} alt={user.email} /> 
-          ) : (
-            <img src={userIcon} alt='User icon' />
-          )}     
+          {hasUser ?
+            <img src={gravatar(user.email)} alt={user.email} /> :
+            <img src={userIcon} alt='iconodeusuario' />}
           <p>Perfil</p>
         </div>
         <ul>
-          {hasUser ? (
-            <li>
-              <Link to='/'>{user.name}</Link>
-            </li> 
-          ) : null}
-          {hasUser ? (
-            <li>
-              <Link to='#logout' onClick={handleLogout}>
-                Cerrar Sesion
-              </Link>
-            </li> 
-          ) : (
-            <li>
-              <Link to='/login'>Iniciar Sesión</Link>
-            </li>
-          )}
+          {hasUser ?
+            <li><a href='/'>{user.name}</a></li> :
+            null}
+          {hasUser ?
+            <li><a href='#logout' onClick={handleLogout}>Cerrar Sesión</a></li> : (
+              <li>
+                <Link to='/Login'>
+                  Iniciar sesión
+                </Link>
+              </li>
+            )}
         </ul>
       </div>
     </header>

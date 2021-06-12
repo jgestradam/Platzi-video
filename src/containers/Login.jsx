@@ -21,9 +21,9 @@ const Login = (props) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
     props.loginRequest(form);
-    props.history.push('/');
+    props.history.push('/'); 
   };
 
   return (
