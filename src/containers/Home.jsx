@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -12,8 +13,8 @@ import '../assets/styles/App.scss';
 const Home = ({ myList, trends, originals }) => {
   return (
     <>
-      <Search />
-      
+      <Header />
+      <Search isHome />
       {myList.length > 0 && (
         <Categories title='Mi lista'> 
           {' '}

@@ -21,6 +21,18 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case 'REGISTER_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case 'GET_VIDEO_SOURCE':
+      return {
+        ...state,
+        playing: state.trends.find((item) => item.id === Number(action.payload)) || 
+        state.original.find((item) => item.id === Number(action.payload)) ||
+        [],
+      };
     default: // Caso por defecto si no cumple el action con ninguno
       return state;
   }
