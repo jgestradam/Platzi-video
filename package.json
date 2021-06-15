@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://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@github.com/jgestradam/Platzi-video",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --env development"
