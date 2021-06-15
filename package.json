@@ -1,12 +1,12 @@
 {
-  "homepage": "https://jgestradam.github.io/Platzi-video/",
+  "homepage": "https://jgestradam.github.io/Platzi-video",
   "name": "platzi-video",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build -r 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 https://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@github.com/jgestradam/Platzi-video",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --env development"
@@ -38,7 +38,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
-    "gh-pages": "^3.2.0",
+    "gh-pages": "^3.2.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
